@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.csi.dao.MealMapper" >
+  <resultMap id="BaseResultMap" type="com.csi.model.Meal" >
+    <id column="meaId" property="meaid" jdbcType="INTEGER" />
+    <result column="mealSeriesId" property="mealseriesid" jdbcType="INTEGER" />
+    <result column="mealName" property="mealname" jdbcType="VARCHAR" />
+    <result column="mealSummarize" property="mealsummarize" jdbcType="VARCHAR" />
+    <result column="mealDescription" property="mealdescription" jdbcType="VARCHAR" />
+    <result column="mealPrice" property="mealprice" jdbcType="DOUBLE" />
+    <result column="mealImage" property="mealimage" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    meaId, mealSeriesId, mealName, mealSummarize, mealDescription, mealPrice, mealImage
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.csi.model.MealExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from meal
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectsearchall" resultMap="BaseResultMap" parameterType="com.csi.model.Meal">
+  	select * from meal where mealName=#{mealname} and mealSeriesId=#{mealseriesid}
+  </select>
+  <select id="selectall" resultMap="BaseResultMap">
+  	select * from meal
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from meal
+    where meaId = #{meaid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from meal
+    where meaId = #{meaid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.csi.model.MealExample" >
+    delete from meal
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.csi.model.Meal" >
+    insert into meal (meaId, mealSeriesId, mealName, 
+      mealSummarize, mealDescription, mealPrice, 
+      mealImage)
+    values (#{meaid,jdbcType=INTEGER}, #{mealseriesid,jdbcType=INTEGER}, #{mealname,jdbcType=VARCHAR}, 
+      #{mealsummarize,jdbcType=VARCHAR}, #{mealdescription,jdbcType=VARCHAR}, #{mealprice,jdbcType=DOUBLE}, 
+      #{mealimage,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.csi.model.Meal" >
+    insert into meal
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="meaid != null" >
+        meaId,
+      </if>
+      <if test="mealseriesid != null" >
+        mealSeriesId,
+      </if>
+      <if test="mealname != null" >
+        mealName,
+      </if>
+      <if test="mealsummarize != null" >
+        mealSummarize,
+      </if>
+      <if test="mealdescription != null" >
+        mealDescription,
+      </if>
+      <if test="mealprice != null" >
+        mealPrice,
+      </if>
+      <if test="mealimage != null" >
+        mealImage,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="meaid != null" >
+        #{meaid,jdbcType=INTEGER},
+      </if>
+      <if test="mealseriesid != null" >
+        #{mealseriesid,jdbcType=INTEGER},
+      </if>
+      <if test="mealname != null" >
+        #{mealname,jdbcType=VARCHAR},
+      </if>
+      <if test="mealsummarize != null" >
+        #{mealsummarize,jdbcType=VARCHAR},
+      </if>
+      <if test="mealdescription != null" >
+        #{mealdescription,jdbcType=VARCHAR},
+      </if>
+      <if test="mealprice != null" >
+        #{mealprice,jdbcType=DOUBLE},
+      </if>
+      <if test="mealimage != null" >
+        #{mealimage,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.csi.model.MealExample" resultType="java.lang.Integer" >
+    select count(*) from meal
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update meal
+    <set >
+      <if test="record.meaid != null" >
+        meaId = #{record.meaid,jdbcType=INTEGER},
+      </if>
+      <if test="record.mealseriesid != null" >
+        mealSeriesId = #{record.mealseriesid,jdbcType=INTEGER},
+      </if>
+      <if test="record.mealname != null" >
+        mealName = #{record.mealname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mealsummarize != null" >
+        mealSummarize = #{record.mealsummarize,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mealdescription != null" >
+        mealDescription = #{record.mealdescription,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mealprice != null" >
+        mealPrice = #{record.mealprice,jdbcType=DOUBLE},
+      </if>
+      <if test="record.mealimage != null" >
+        mealImage = #{record.mealimage,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update meal
+    set meaId = #{record.meaid,jdbcType=INTEGER},
+      mealSeriesId = #{record.mealseriesid,jdbcType=INTEGER},
+      mealName = #{record.mealname,jdbcType=VARCHAR},
+      mealSummarize = #{record.mealsummarize,jdbcType=VARCHAR},
+      mealDescription = #{record.mealdescription,jdbcType=VARCHAR},
+      mealPrice = #{record.mealprice,jdbcType=DOUBLE},
+      mealImage = #{record.mealimage,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.csi.model.Meal" >
+    update meal
+    <set >
+      <if test="mealseriesid != null" >
+        mealSeriesId = #{mealseriesid,jdbcType=INTEGER},
+      </if>
+      <if test="mealname != null" >
+        mealName = #{mealname,jdbcType=VARCHAR},
+      </if>
+      <if test="mealsummarize != null" >
+        mealSummarize = #{mealsummarize,jdbcType=VARCHAR},
+      </if>
+      <if test="mealdescription != null" >
+        mealDescription = #{mealdescription,jdbcType=VARCHAR},
+      </if>
+      <if test="mealprice != null" >
+        mealPrice = #{mealprice,jdbcType=DOUBLE},
+      </if>
+      <if test="mealimage != null" >
+        mealImage = #{mealimage,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where meaId = #{meaid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.csi.model.Meal" >
+    update meal
+    set mealSeriesId = #{mealseriesid,jdbcType=INTEGER},
+      mealName = #{mealname,jdbcType=VARCHAR},
+      mealSummarize = #{mealsummarize,jdbcType=VARCHAR},
+      mealDescription = #{mealdescription,jdbcType=VARCHAR},
+      mealPrice = #{mealprice,jdbcType=DOUBLE},
+      mealImage = #{mealimage,jdbcType=VARCHAR}
+    where meaId = #{meaid,jdbcType=INTEGER}
+  </update>
+</mapper>

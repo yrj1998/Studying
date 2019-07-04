@@ -1,0 +1,120 @@
+@charset "utf-8";
+* {word-wrap: break-word; margin:0; padding:0;}
+html {-webkit-text-size-adjust: none; }
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,i{padding:0;margin:0;}
+body{font:normal 14px/24px "Microsoft Yahei","冬青黑体简体中文 w3","宋体"; }
+fieldset,img,html,body,iframe{border:0;}
+table{border-collapse:collapse;border-spacing:0;}
+ol,ul,li{list-style:none;}
+address,caption,cite,code,dfn,em,strong,th,var{font-weight:normal;font-style:normal;}
+caption,th{text-align:left;}
+em,i,small,caption,th{font-weight:normal;font-style:normal;font-size:100%;}
+h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:bold;font-size:100%;}
+q:before,q:after{content:'';}
+.clearfix{*zoom:1}
+.clearfix:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0;}
+html,body{width:100%;height:100%;}
+a {color: #333;text-decoration: none;}
+a:hover {text-decoration: underline;}
+a,img {border: none;}
+a,button{ outline:none; border:0;}
+input,select{border:1px solid #ccc;}
+button::-moz-focus-inner{border:0;padding:0;margin:0;}
+textarea,input,button,select{outline:0;font-size:inherit;line-height:inherit;color:inherit;font-family:inherit;}
+textarea{overflow:auto;resize:none;}
+.hide,.none{display: none}
+.show,.block{display: block;}
+.fl{float: left;}
+.fr{float: right;}
+.w250{width: 250px;}
+.w360{width: 360px;}
+/*
+tmdialog 默认zindex:100
+tm_overflow:zindex 99
+#1F1414
+*/
+/***********************************keke老师样式开始**************************************************/
+/*阴影效果 强调盒阴影*/
+.tmui-shadow-dark {box-shadow: 0 0 5px 2px rgba(0,0,0,.35); } 
+.tmui-shadow-light{box-shadow: 0 0 0 10px rgba(255,255,255,.25); } 
+.tmui-shadow-inset{ box-shadow: inset 0 0 7px 4px rgba(255,255,255,.5); } 
+.tmui-shadow-border { box-shadow: inset 0 0 0 7px rgba(255,255,255,.5); } 
+/*浮雕效果的盒阴影*/
+.tmui-embossed-light{ border: 1px solid rgba(0,0,0,0.1); box-shadow: inset 0 1px 0 rgba(255,255,255,0.7); } 
+.tmui-embossed-heavy{ border: 1px solid rgba(0,0,0,0.1); box-shadow:  inset 0 2px 3px rgba(255,255,255,0.3), inset 0 -2px 3px rgba(0,0,0,0.3), 0 1px 1px rgba(255,255,255,0.9); }
+/*圆角样式*/
+.tmui-light-rounded { border-radius: 3px; } 
+.tmui-heavy-rounded { border-radius: 8px; } 
+.tmui-full-rounded { border-radius: 50%; } 
+.tmui-barrel-rounded { border-radius: 20px/60px;}
+/*定向盒阴影*/
+.tmui-drop-shadow.top { box-shadow: 0 -4px 2px -2px rgba(0,0,0,0.4); } 
+.tmui-drop-shadow.right { box-shadow: 4px 0 2px -2px rgba(0,0,0,0.4); } 
+.tmui-drop-shadow.bottom { box-shadow: 0 4px 2px -2px rgba(0,0,0,0.4); } 
+.tmui-drop-shadow.left { box-shadow: -4px 0 2px -2px rgba(0,0,0,0.4); } 
+ 
+/***********************************tmdialog tmwindow start*********************/
+.tmui-modal{position:fixed;background:#edf0f2;z-index:100;overflow: hidden; bottom:0; right:0;top:0px;left:0px;*left:35%; *top:35%;cursor:pointer;display: none;}
+/*header*/
+/*.tmui-modal-header{background-color:#be3948;overflow: hidden;}*/
+.tmui-modal-header{background-color:#1F1414;overflow: hidden;}
+.tmui-modal-header h3{font-size:18px;line-height:55px;height:55px;color:#fff;padding-left:30px;transition:background-color 0.2s;-webkit-transition:background-color 0.2s;-moz-transition:background-color 0.2s;-o-transition:background-color 0.2s;}
+/*.tmui-modal-header h3:hover{background-color: #E63539;}*/
+.tmui-modal-header h3:hover{background-color: #333;}
+.tmui-modal:hover .tmui-modal-toolbars{display: block;}
+.tmui-modal-close{position:absolute;top:15px;right:20px;width:25px;height:25px;line-height:25px;*line-height:34px;text-align:center;vertical-align:middle;font-size:30px;color:#fff;background:transparent;border-radius:50%;cursor:pointer;transition:background-color 0.2s;-webkit-transition:background-color 0.2s;-moz-transition:background-color 0.2s;-o-transition:background-color 0.2s;overflow: hidden;}
+.tmui-modal-close:hover{background:#cb616d;}
+.tmui-modal-close{position:absolute;top:15px;right:20px;width:25px;height:25px;line-height:25px;*line-height:34px;text-align:center;vertical-align:middle;font-size:30px;color:#fff;background:transparent;border-radius:50%;cursor:pointer;transition:background-color 0.2s;-webkit-transition:background-color 0.2s;-moz-transition:background-color 0.2s;-o-transition:background-color 0.2s;overflow: hidden;}
+.tmui-modal-close:hover{background:#cb616d;}
+.tmui-modal-min{position:absolute;top:15px;right:45px;width:25px;height:25px;line-height:25px;*line-height:34px;text-align:center;vertical-align:middle;font-size:30px;color:#fff;background:transparent;border-radius:50%;cursor:pointer;transition:background-color 0.2s;-webkit-transition:background-color 0.2s;-moz-transition:background-color 0.2s;-o-transition:background-color 0.2s;overflow: hidden;}
+.tmui-modal-min:hover{background:#cb616d;}
+.tmui-modal-max{position:absolute;top:15px;right:68px;width:25px;height:25px;line-height:25px;*line-height:34px;text-align:center;vertical-align:middle;font-size:30px;color:#fff;background:transparent;border-radius:50%;cursor:pointer;transition:background-color 0.2s;-webkit-transition:background-color 0.2s;-moz-transition:background-color 0.2s;-o-transition:background-color 0.2s;overflow: hidden;}
+.tmui-modal-max:hover{background:#cb616d;}
+.tmui-modal-toolbars{display: none}
+.tmui-modal-input{border:1px solid #ccc;width:100%;height:35px;line-height: 35px;}
+.tmui-modal-textarea{border:1px solid #ccc;width:100%;font-size: 14px;overflow: auto;resize:none;}
+.tmui-modal-span{font:normal 25px/25px "Helvetica Neue",Helvetica,Arial,sans-serif;position: relative;top:-4px;left: -1px;}
+.tmui-modal-min span{top:-5px;} 
+/*button*/
+.tmui-modal-green{color:#fff;font-size:14px;background-color:#39b94e;height:40px;line-height:40px;width:160px;cursor:pointer;text-align:center;transition:background-color 0.2s;-webkit-transition:background-color 0.2s;-moz-transition:background-color 0.2s;-o-transition:background-color 0.2s;}
+.tmui-modal-green:hover{background-color:#33a646;}
+.tmui-modal-gray{color:#7e878c;font-size:14px;background-color:#d0d6d9;height:40px;line-height:40px;width:140px;cursor:pointer;text-align:center;transition:background-color 0.2s;-webkit-transition:background-color 0.2s;-moz-transition:background-color 0.2s;-o-transition:background-color 0.2s;}
+.tmui-modal-gray:hover{background-color:#bbc0c3;}
+/*
+.tmui-modal-black{color:#fff;font-size:14px;background-color:#666;height:40px;line-height:40px;width:140px;cursor:pointer;text-align:center;transition:background-color 0.2s;-webkit-transition:background-color 0.2s;-moz-transition:background-color 0.2s;-o-transition:background-color 0.2s;}
+.tmui-modal-black:hover{background-color:#000;}*/
+.tmui-modal-black{color:#fff;font-size:14px;background-color:#666;padding:8px;cursor:pointer;text-align:center;transition:background-color 0.2s;-webkit-transition:background-color 0.2s;-moz-transition:background-color 0.2s;-o-transition:background-color 0.2s;}
+.tmui-modal-black:hover{background-color:#000;}
+/*content*/
+.tmui-modal-body{overflow: hidden;height: 140px;}	
+.tmui-modal-content{float:left;word-break:auto;overflow:hidden;padding:50px 30px 0px 10px;;}
+.tmui-modal-bottom{text-align: center;overflow: hidden;}
+.tmui-modal-icon{float:left;width:108px;}
+/*icons warn error success tip question*/
+.tmui-ico-warn,.tmui-ico-error,.tmui-ico-success,.tmui-ico-tip,.tmui-ico-question{background:url(images/bg_sppopbox.png) no-repeat -400px -400px;}
+.tmui-ico-warn,.tmui-ico-error,.tmui-ico-success,.tmui-ico-tip,.tmui-ico-question{display:block;position:absolute;top:100px;left:58px;}
+.tmui-ico-warn{width:42px;padding:40px 0 0 0;*padding:26px 0 0 0;background-position:0 0;}
+.tmui-ico-error{width:38px;padding:40px 0 0 0;*padding:26px 0 0 0;background-position:-50px 0;}
+.tmui-ico-success{width:42px;padding:40px 0 0 0;*padding:26px 0 0 0;background-position:-100px 0;}
+.tmui-ico-tip{width:39px;padding:40px 0 0 0;*padding:26px 0 0 0;background-position:-150px 0;}
+.tmui-ico-question{width:25px;padding:35px 0 0 0;*padding:26px 0 0 0;background-position:-200px 0;}
+/***********************************tmdialog tmwindow end*****************************************/
+/*阴影层*/
+.tmui-overlay{width:100%;height:100%;background-color:#362C35;position:absolute;top:0;left:0;z-index:99;filter:alpha(opacity=30);-moz-opacity:0.3;-khtml-opacity:0.3;opacity:0.3;}
+/*loading*/
+/*tmLoading css*/
+.tmui-loading{padding:16px;color:#444444;z-index:1000;border:2px solid #BED8FE;line-height:16px;position:fixed;background:#EAF3FC;font-size:12px;box-shadow:0px 0px 3em #333;-webkit-box-shadow:0px 0px 3em #333;-moz-box-shadow:0px 0px 3em #333;border-radius:5px;}
+.tmui-loading #tm-loading-content{padding:5px 10px 10px 22px;background:url('../../images/loading.gif') no-repeat;}
+#tm-loading-content p{color:#333;}
+.tmui_resizable,.tmui_drag_resizable{overflow:hidden;background:#fff;opacity:0.38;filter:alpha(opacity=38);position:absolute;top:0;left:0;z-index:999999;box-shadow:0 0 5em #fff;border-color:#081629;background:#c3d7dc;border-radius:6px;}
+/*num icon*/
+.tmui-numproxy,.tmui-num{position:absolute;color:#fff;font:bold 10px/18px Arial,Helvetica,sans-serif;width:20px;height:20px;background:#4c95cd;background:#4c95cd;background:-moz-linear-gradient(top,#4c95cd 0%,#3c78ba 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#4c95cd),color-stop(100%,#3c78ba));background:-webkit-linear-gradient(top,#4c95cd 0%,#3c78ba 100%);background:-o-linear-gradient(top,#4c95cd 0%,#3c78ba 100%);background:-ms-linear-gradient(top,#4c95cd 0%,#3c78ba 100%);background:linear-gradient(to bottom,#4c95cd 0%,#3c78ba 100%);text-align:center;-webkit-border-radius:12px;-moz-border-radius:12px;border-radius:12px;background:#4c95cd;z-index:999}
+/*ellipsis*/
+.tmui-ellipsis{display:block;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+/***********************************keke style********************************/
+/*分页*/
+.pagination{font-size:12px;}
+.pagination a{text-decoration:none;border:solid 1px #999;color:#999;}
+.pagination a,.pagination span{display:block;float:left;padding:0.3em 0.5em;margin-right:5px;margin-bottom:5px;min-width:1em;text-align:center;}
+.pagination .current{background:#999;color:#fff;border:solid 1px #999;}
+.pagination .current.prev,.pagination .current.next{color:#999;border-color:#999;background:#fff;}

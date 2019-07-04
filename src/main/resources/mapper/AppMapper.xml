@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.csi.dao.AppMapper" >
+  <resultMap id="BaseResultMap" type="com.csi.model.App" >
+    <id column="Id" property="id" jdbcType="INTEGER" />
+    <result column="appID" property="appid" jdbcType="INTEGER" />
+    <result column="apiKey" property="apikey" jdbcType="VARCHAR" />
+    <result column="secretKey" property="secretkey" jdbcType="VARCHAR" />
+    <result column="threshod" property="threshod" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    Id, appID, apiKey, secretKey, threshod
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.csi.model.AppExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from app
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from app
+    where Id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from app
+    where Id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.csi.model.AppExample" >
+    delete from app
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.csi.model.App" >
+    insert into app (Id, appID, apiKey, 
+      secretKey, threshod)
+    values (#{id,jdbcType=INTEGER}, #{appid,jdbcType=INTEGER}, #{apikey,jdbcType=VARCHAR}, 
+      #{secretkey,jdbcType=VARCHAR}, #{threshod,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.csi.model.App" >
+    insert into app
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        Id,
+      </if>
+      <if test="appid != null" >
+        appID,
+      </if>
+      <if test="apikey != null" >
+        apiKey,
+      </if>
+      <if test="secretkey != null" >
+        secretKey,
+      </if>
+      <if test="threshod != null" >
+        threshod,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="appid != null" >
+        #{appid,jdbcType=INTEGER},
+      </if>
+      <if test="apikey != null" >
+        #{apikey,jdbcType=VARCHAR},
+      </if>
+      <if test="secretkey != null" >
+        #{secretkey,jdbcType=VARCHAR},
+      </if>
+      <if test="threshod != null" >
+        #{threshod,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.csi.model.AppExample" resultType="java.lang.Integer" >
+    select count(*) from app
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update app
+    <set >
+      <if test="record.id != null" >
+        Id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.appid != null" >
+        appID = #{record.appid,jdbcType=INTEGER},
+      </if>
+      <if test="record.apikey != null" >
+        apiKey = #{record.apikey,jdbcType=VARCHAR},
+      </if>
+      <if test="record.secretkey != null" >
+        secretKey = #{record.secretkey,jdbcType=VARCHAR},
+      </if>
+      <if test="record.threshod != null" >
+        threshod = #{record.threshod,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update app
+    set Id = #{record.id,jdbcType=INTEGER},
+      appID = #{record.appid,jdbcType=INTEGER},
+      apiKey = #{record.apikey,jdbcType=VARCHAR},
+      secretKey = #{record.secretkey,jdbcType=VARCHAR},
+      threshod = #{record.threshod,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.csi.model.App" >
+    update app
+    <set >
+      <if test="appid != null" >
+        appID = #{appid,jdbcType=INTEGER},
+      </if>
+      <if test="apikey != null" >
+        apiKey = #{apikey,jdbcType=VARCHAR},
+      </if>
+      <if test="secretkey != null" >
+        secretKey = #{secretkey,jdbcType=VARCHAR},
+      </if>
+      <if test="threshod != null" >
+        threshod = #{threshod,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where Id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.csi.model.App" >
+    update app
+    set appID = #{appid,jdbcType=INTEGER},
+      apiKey = #{apikey,jdbcType=VARCHAR},
+      secretKey = #{secretkey,jdbcType=VARCHAR},
+      threshod = #{threshod,jdbcType=VARCHAR}
+    where Id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

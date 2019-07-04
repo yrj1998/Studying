@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="image/x-icon" href="/imetadata/gdsp/images/main/head/logo/3D_logo_48px.png" rel="shortcut icon">
+<meta name="renderer" content="webkit|ie-stand"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="generator" content="" />
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+<!-- Bootstrap 3.3.2 -->
+<!--
+<link href="/imetadata/gdsp/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="/imetadata/gdsp/css/font-awesome.css" rel="stylesheet" type="text/css" />
+-->
+<link rel="stylesheet" href="/imetadata/static/css/default/bootstrap/bootstrap.css" />
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="/imetadata/static/comp/fontawesome/css/font-awesome.min.css" />
+
+<link rel="stylesheet" href="/imetadata/static/css/default/simple-line-icons/css/simple-line-icons.css"/>
+<link rel="stylesheet" href="/imetadata/static/comp/animate.css/animate.min.css"/>
+
+
+<!-- Ionicons -->
+<link href="/imetadata/gdsp/css/ionicons.css" rel="stylesheet" type="text/css" />
+<!-- Skins. Choose a skin from the css/skins
+     folder instead of downloading all of them to reduce the load. -->
+<link href="/imetadata/gdsp/css/_all-skins.css" rel="stylesheet" type="text/css" />
+<!-- Castle 1.0 -->
+<link href="/imetadata/gdsp/css/castle.css" rel="stylesheet" type="text/css" />
+<!-- Theme style -->
+<link href="/imetadata/gdsp/css/castle-main.css" rel="stylesheet" type="text/css" />
+
+<link href="/imetadata/static/comp/layui/css/layui.css" rel="stylesheet" type="text/css" />
+<link href="/imetadata/gdsp/js/plugins/scrollbar/perfect-scrollbar.css" rel="stylesheet" type="text/css" />
+<link href="/imetadata/gdsp/css/fontsize.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/imetadata/static/css/default/theme.css" />
+<link rel="stylesheet" href="/imetadata/static/css/default/cover.css" />
+<link rel="stylesheet" href="/imetadata/static/css/default/step.css" />
+  
+
+<script language="JavaScript">
+var context="/imetadata",__contextPath="/imetadata",__extendOptions="main/options",__jsPath="/imetadata/gdsp/js",__scriptPath="/imetadata/gdsp/script";</script>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="/imetadata/gdsp/js/base/html5shiv.js"></script>
+<script src="/imetadata/gdsp/js/base/respond.min.js"></script>
+<![endif]-->
+<script src="/imetadata/gdsp/js/base/jquery-2.1.4.js"></script>
+<script src="/imetadata/gdsp/js/base/utils-base.js"></script>
+<script src="/imetadata/static/comp/layui/layui.js"></script>
+<script src="/imetadata/static/comp/layui/layui-config.js"></script>
+<script src="/imetadata/static/js/common/util.js"></script>
+<script src="/imetadata/static/js/common/autoheight.js"></script>
+
+
+</head>
+<body class="skin-default fixed sidebar-none">
+<!-- Content Wrapper. Contains page content -->
+<div id="__castlePageContent" class="content-wrapper" style="padding-top:0px;padding-right:0px;">
+    <div class="box">
+    <div class="box-body" style="min-height: 400px;">
+        <div class="error-page">
+            <div class="error-content">
+                <h3>404</h3>
+                <p>很抱歉，您访问的页面不存在!</p>
+                <hr style="margin-top:10px;border-color:#95CFF7">
+                <p><a style="width:35%" class="btn btn-primary" href="/imetadata/index.d" target="_top"><i class="fa fa-hand-o-up"></i>点击返回</a></p>
+            </div>
+        </div><!-- /.error-page -->
+    </div>
+</div></div><!-- /.content-wrapper -->
+<style>
+.box{
+	min-height:0px;
+}
+</style><div id="__preloader">
+    <div id="__preloader-icon">
+        <i class="fa fa-spinner"></i>
+    </div>
+</div>
+<script data-main="/imetadata/gdsp/js/frame.js" src="/imetadata/gdsp/js/require.js" ></script>
+</body>
+</html>

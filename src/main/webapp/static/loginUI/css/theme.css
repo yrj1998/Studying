@@ -1,0 +1,258 @@
+/* ========================================================================
+   Component: layout
+ ========================================================================== */
+body,
+.wrapper > section {
+  background-color: #F1F2F7;
+}
+.wrapper > .aside {
+  background-color: #2A3542;
+}
+/* ========================================================================
+   Component: top-navbar
+ ========================================================================== */
+.topnavbar {
+  background-color: #35404D;
+}
+.topnavbar .navbar-header {
+  background-color: transparent;
+  background-image: -webkit-linear-gradient(left, #2c3e50 0%, #2c3e50 100%);
+  background-image: -o-linear-gradient(left, #2c3e50 0%, #2c3e50 100%);
+  background-image: linear-gradient(to right, #2c3e50 0%, #2c3e50 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2c3e50', endColorstr='#ff2c3e50', GradientType=1);
+}
+@media only screen and (max-width: 768px) {
+	.navbar-nav{margin:0px 10px 0px 0px;}
+	
+}
+@media only screen and (min-width: 768px) {
+  .topnavbar .navbar-header {
+    background-image: none;
+  }
+}
+.topnavbar .navbar-nav > li > a,
+.topnavbar .navbar-nav > .open > a {
+  color: #f1f1f1;
+}
+.topnavbar .navbar-nav > li > a:hover,
+.topnavbar .navbar-nav > .open > a:hover,
+.topnavbar .navbar-nav > li > a:focus,
+.topnavbar .navbar-nav > .open > a:focus {
+  color: #9c9c9c;
+}
+.topnavbar .navbar-nav > .active > a,
+.topnavbar .navbar-nav > .open > a,
+.topnavbar .navbar-nav > .active > a:hover,
+.topnavbar .navbar-nav > .open > a:hover,
+.topnavbar .navbar-nav > .active > a:focus,
+.topnavbar .navbar-nav > .open > a:focus {
+  background-color: transparent;
+}
+.topnavbar .navbar-nav > li > [data-toggle='navbar-search'] {
+  color: #9c9c9c;
+}
+
+@media only screen and (min-width: 768px) {
+  .topnavbar {
+    position:fixed;
+    top:0px;
+    width:100%;
+    background-color: #35404D;
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2c3e50', endColorstr='#ff2c3e50', GradientType=1);
+  }
+  .topnavbar .navbar-nav > .open > a,
+  .topnavbar .navbar-nav > .open > a:hover,
+  .topnavbar .navbar-nav > .open > a:focus {
+    box-shadow: 0 -3px 0 rgba(255, 255, 255, 0.5) inset;
+  }
+  .topnavbar .navbar-nav > li > a,
+  .topnavbar .navbar-nav > .open > a {
+    color: #f1f1f1;
+  }
+  .topnavbar .navbar-nav > li > a:hover,
+  .topnavbar .navbar-nav > .open > a:hover,
+  .topnavbar .navbar-nav > li > a:focus,
+  .topnavbar .navbar-nav > .open > a:focus {
+    color: #ffffff;
+  }
+  
+  
+  
+  .topnavbar .nav-wrapper {
+  background-color: #35404D;
+  display: inline-block;
+  float:right;
+  margin-right:10px;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2c3e50', endColorstr='#ff2c3e50', GradientType=1);
+}
+  
+}
+/* ========================================================================
+   Component: sidebar
+ ========================================================================== */
+.sidebar {
+  background-color: #2A3542;
+}
+.sidebar .nav-heading {
+  color: #919da8;
+}
+.sidebar .nav > li > a,
+.sidebar .nav > li > .nav-item {
+  color: #cccccc;
+}
+
+.sidebar .nav > li > a:hover,
+.sidebar .nav > li > .nav-item:hover{
+  color: #ffffff;
+}
+/* .sidebar .nav > li > a:focus, */
+/* .sidebar .nav > li > .nav-item:focus, */
+/* .sidebar .nav > li > a:hover, */
+/* .sidebar .nav > li > .nav-item:hover { */
+/*   color: #ffffff; */
+/*   background-color: rgba(59, 197, 187, 1); */
+/* } */
+.sidebar .nav .menu-item:hover{
+	 color: #ffffff; 
+	 background-color: #138078;
+}
+.sidebar .nav > li > a > em,
+.sidebar .nav > li > .nav-item > em {
+  color: inherits;
+}
+.sidebar .nav > li.active,
+.sidebar .nav > li.open,
+.sidebar .nav > li.active > a,
+.sidebar .nav > li.open > a,
+.sidebar .nav > li.active .nav,
+.sidebar .nav > li.open .nav {
+  background-color:#3BC5BB;
+  color: #ffffff;
+}
+.sidebar .nav > li.active > a > em,
+.sidebar .nav > li.open > a > em {
+  color: #ffffff;
+}
+/*
+.sidebar .nav > li.active {
+  border-left-color: #ffffff;
+}
+*/
+.sidebar-subnav {
+  background-color:#35404D;
+}
+.sidebar-subnav > .sidebar-subnav-header {
+  color: #ffffff;
+}
+.sidebar-subnav > li > a,
+.sidebar-subnav > li > .nav-item {
+  color: #9c9c9c;
+}
+.sidebar-subnav > li > a:focus,
+.sidebar-subnav > li > .nav-item:focus,
+.sidebar-subnav > li > a:hover,
+.sidebar-subnav > li > .nav-item:hover {
+  color: #ffffff;
+}
+.sidebar-subnav > li.active > a,
+.sidebar-subnav > li.active > .nav-item {
+  color: #ffffff;
+}
+.sidebar-subnav > li.active > a:after,
+.sidebar-subnav > li.active > .nav-item:after {
+  border-color: #ffffff;
+  background-color: #ffffff;
+}
+/* ========================================================================
+   Component: offsidebar
+ ========================================================================== */
+.offsidebar {
+  border-left: 1px solid #cccccc;
+  background-color: #ffffff;
+  color: #515253;
+}
+
+.icon-skin{
+	background-image: url("./images/icon/skin.png");
+}
+
+
+/* 按钮 */
+
+.layui-btn{display: inline-block; vertical-align: middle; height: 38px; line-height: 38px; padding: 0 18px; background-color: #42BECC; color: #fff; white-space: nowrap; text-align: center; font-size: 14px; border: none; border-radius: 3px; cursor: pointer; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none;}
+.layui-btn:hover{background-color:#0f97a2;}
+.layui-btn:active{opacity: 1; filter:alpha(opacity=100);}
+.layui-btn+.layui-btn{margin-left: 2px;}
+/* 圆角 */.layui-btn-radius{border-radius: 100px;}
+.layui-btn .layui-icon{margin-right: 3px; font-size: 18px; vertical-align: bottom; vertical-align: middle\0;}
+
+/* 原始 */.layui-btn-primary{border: 1px solid #A1A1A1; background-color: #fff; color: #555;}
+.layui-btn-primary:hover{background-color: #F2F2F2; border: 1px solid #A1A1A1;}
+/* 百搭 */.layui-btn-normal{background-color: #1E9FFF;}
+/* 温暖 */.layui-btn-warm{background-color: #FFBA53;}
+.layui-btn-warm:hover{background-color: #ffb13e;}
+/* 警告 */.layui-btn-danger{background-color: #FF5722;}
+/* 禁用 */.layui-btn-disabled,.layui-btn-disabled:hover,.layui-btn-disabled:active{border: 1px solid #e6e6e6; background-color: #FBFBFB; color: #C9C9C9; cursor: not-allowed; opacity: 1;}
+
+/* 大按钮  */.layui-btn-lg{height: 44px; line-height: 44px; padding: 0 25px; font-size: 16px;}
+/* 小按钮  */.layui-btn-sm{height: 30px; line-height: 30px; padding: 0 16px; font-size: 12px;}
+.layui-btn-sm i{font-size: 16px !important;}
+/* 超小按钮 */.layui-btn-xs{height: 22px; line-height: 22px; padding: 0 5px; font-size: 12px;}
+.layui-btn-xs i{font-size: 14px !important;}
+/* 按钮组 */.layui-btn-group{display: inline-block; vertical-align: middle; font-size: 0;}
+.layui-btn-group .layui-btn{margin-left: 0!important; margin-right: 0!important; border-left: 1px solid rgba(255,255,255,.5); border-radius: 0;}
+.layui-btn-group .layui-btn-primary{border-left: none;}
+.layui-btn-group .layui-btn-primary:hover{border-color: #C9C9C9; color: #009688;}
+.layui-btn-group .layui-btn:first-child{border-left: none; border-radius: 2px 0 0 2px;}
+.layui-btn-group .layui-btn-primary:first-child{border-left: 1px solid #c9c9c9;}
+.layui-btn-group .layui-btn:last-child{border-radius: 0 2px 2px 0;}
+.layui-btn-group .layui-btn+.layui-btn{margin-left: 0;}
+.layui-btn-group+.layui-btn-group{margin-left: 10px;}
+
+
+
+/**layui分页条颜色 **/
+.layui-laypage .layui-laypage-curr .layui-laypage-em{position: absolute; left: -1px; top: -1px; padding: 1px; width: 100%; height: 100%; background-color: #42BECC; }
+
+
+
+
+
+
+/*2018-02-05 登录按钮背景色*/
+
+.btn-login:hover{
+	opacity: 1; */
+    filter: alpha(opacity=100);
+	background-color: #FFBA53;
+	color:#fff;
+}
+
+
+
+.layui-table-cell .layui-btn{
+	background-color: #FFBA53;
+}
+
+.layui-table-cell .layui-btn:hover{
+	background-color: #ffb13e;
+}
+
+/*下拉多选背景色*/
+.lay-select-dropdown dl dd.layui-this{background-color: #42BECC;}
+
+/*单选选中背景色*/
+.layui-form-checked[lay-skin="primary"] i {
+    border-color: #42BECC;
+    background-color: #42BECC;
+}
+/*  1.修改下拉按钮的背景色  2.搜索组件里主按钮的颜色   xugy - 2018-03-25 */
+.skin-default .dropdown-menu > li > a:hover{
+	background-color:#42BECC;
+}
+.layui-layer-btn .layui-layer-btn0{border:none; background-color: #42BECC; color:#fff;}
+
+ 

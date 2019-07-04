@@ -1,0 +1,29 @@
+/*横向一级菜单*/
+.navbar-nav > li > a{
+	font-size:14px;
+}
+
+/*左侧一级菜单*/
+.sidebar-menu > li > a{
+	font-size:14px;
+}
+/*左侧二级及所有下级菜单菜单*/
+.sidebar-menu .treeview-menu > li > a{
+	font-size:14px;
+}
+/*树控件，表格控件，表单*/
+html, body{
+	font-size:14px;
+}
+/*输入框内部字体*/
+.form-control{
+	font-size:14px;
+}
+/*按钮*/
+.btn{
+	font-size:14px;
+}
+/*下拉操作组(表格组件)*/
+.dropdown-menu{
+	font-size:14px;
+}

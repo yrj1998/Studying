@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	
+	<context:component-scan base-package="com.csi">
+	<!-- 扫描除了controller注解以外的注解 -->
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
+	
+	<!-- 数据源 -->
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+		<property name="url" value="jdbc:mysql://localhost:3306/csi?useUnicode=true&amp;characterEncoding=UTF-8" />
+      	<property name="username" value="root" />
+     	<property name="password" value="123456" />
+	</bean>
+	
+	<!-- spring整合Mybatis -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- 指定mybatis全局配置文件的位置 -->
+		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
+		<property name="dataSource" ref="dataSource"></property>
+		<!-- 指定映射文件的位置 -->
+		<property name="mapperLocations" value="classpath:/mapper/*.xml"></property>
+	</bean>
+	
+	<!-- 配置扫描器，讲mybatis接口的实现加入到IOC容器中 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<!--扫描所有dao接口的实现，加入到ioc容器中 -->
+		<property name="basePackage" value="com.csi.dao"></property>
+	</bean>
+	
+	<!-- 配置一个可以执行批量的sqlSession -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
+		<constructor-arg name="executorType" value="BATCH"></constructor-arg>
+	</bean>
+	
+	<!-- 事务 -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<!-- 控制数据源 -->
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<aop:config>
+		<!-- 切点 -->
+		<aop:pointcut expression="execution(* com.csi.service..*(..))" id="txPoint"/>
+		<!-- 配置事务增强  -->
+		<aop:advisor advice-ref="txAdvice"  pointcut-ref="txPoint"/>
+	</aop:config>
+	
+	
+	<!-- 事务增强，事务如何切入 -->
+	<tx:advice id="txAdvice">
+		<tx:attributes>
+			<!-- 所有方法都是事务方法 -->
+			<tx:method name="*"/>
+			<!--以get开始的所有方法  -->
+			<tx:method name="get*" read-only="true"/>
+		</tx:attributes>
+	</tx:advice>
+
+
+</beans>

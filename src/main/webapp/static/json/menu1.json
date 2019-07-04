@@ -1,0 +1,45 @@
+[
+	{
+		"id": "1",
+		"name": "贴吧",
+		"icon": null,
+		"url": "",
+		"parentId": "",
+		"childs": [
+			{
+				"id": "11",
+				"name": "菜单",
+				"icon": "/xingxing.png",
+				"url": "chinasofti/meal/meal.jsp",
+				"parentId": "4",
+				"childs": []
+			},
+			{
+				"id": "12",
+				"name": "我的购物车",
+				"icon": "/xingxing.png",
+				"url": "chinasofti/cart/cart.jsp",
+				"parentId": "4",
+				"childs": []
+			},
+			{
+				"id": "14",
+				"name": "我的订单",
+				"icon": "/xingxing.png",
+				"url": "chinasofti/myOrders/myOrders.jsp",
+				"parentId": "4",
+				"childs": []
+			},
+			{
+				"id": "16",
+				"name": "个人设置",
+				"icon": "/xingxing.png",
+				"url": "chinasofti/editUser/editUser.jsp",
+				"parentId": "4",
+				"childs": []
+			}
+		
+		]
+	}
+]
+

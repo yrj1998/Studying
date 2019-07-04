@@ -1,0 +1,244 @@
+@charset "utf-8";
+/*-- 2018-02-03  xugy */
+
+.navbar{
+	min-height: 44px;
+}
+	
+.navbar-brand.navbar-brand-h{
+    height: 44px;
+}
+
+.topnavbar .navbar-nav > li > a{
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.brand-text{
+	padding-top: 10px;
+	font-weight: bolder;
+}
+.sidebar > .nav > li > ul.sidebar-subnav >li.menu-item:hover{
+	    background-color: #465566;
+}
+.sidebar > .nav > li > ul.sidebar-subnav >li.active{
+	    background-color: #3bc5bb;
+}
+
+.formitem .login-icon{
+	margin-right:10px;
+}
+
+
+.sidebar > .nav > li > a > span{
+	margin-left:10px;
+}
+
+.no-padding-left{
+	padding-left:0px;
+	padding-right:0px;
+}
+.padding-right-10{
+	padding-left:10px;
+}
+.padding-top-10{
+	padding-top:10px;
+}
+
+.margin-bottom-0{
+	margin-bottom:0px;
+}
+
+.panel-white{
+	width:100%;
+	height:100%;
+	background-color:#fff;
+}
+
+.login-box .formitem .input{
+	margin-left:10px;
+}
+
+.btn-group {
+	margin-left:2px;
+	/* float:left;*/
+}
+.rememberPwd input{
+	vertical-align: middle;
+    margin-top: -1px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+.btn-login{
+	width: 268px;
+    height: 30px;
+    line-height:30px;
+    margin-left: 20px;
+}
+.bs-actionsbox .btn-group{
+	float:none;
+}
+.layui-table-tips-c{
+	padding:0px;
+}
+.layui-form-radio * {
+    font-size: 14px;
+}
+/*
+.dataloader {
+	padding:10px 5px 0px 5px;
+}
+*/
+.box-header .layui-form .layui-form-select .layui-input{
+	border-color:#d8d8d8;
+	height:30px;
+}
+
+#task_form .layui-form-radio{
+	margin-top:0px;
+}
+
+/*新增修改检核任务*/
+.cfe-martop-five{
+	margin-top:5px;
+}
+.cfe-layform{
+	margin-top:10px;
+	margin-bottom:15px;
+	margin-left:110px;
+}
+.cfe-inline-width{
+	display:inline-block;
+	width:120px;
+}
+
+/*数据目录*/
+
+.search-box{
+	border-color:#D2D2D2!important;
+	height: 30px;
+    line-height: 30px;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #fff;
+    border-radius: 2px;
+    padding-right: 10px;
+}
+
+@media only screen and (max-width: 1032px) {
+	
+	.topnavbar .navbar-header{
+		display:none;
+	}
+}
+
+@media only screen and (max-width: 835px) {
+	
+	.topnavbar .sysMenu{
+		display:none;
+	}
+	
+}
+
+.pad-right-10{
+		padding-left:10px;
+}
+
+@media only screen and (max-width: 991px) {
+	
+	.padding-top-md{
+		padding-top:0px;
+	}
+	
+	.pad-right-10{
+		padding-left:0px;
+	}
+	
+}
+
+@media only screen and (max-width: 767px) {
+	.padding-right-10{
+		padding-left:0px;
+		padding-top:10px;
+	}
+	
+}
+
+
+
+#tableModel{
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
+.ban-header{height:44px;line-height:44px;border-bottom:1px solid #f1f1f1;}
+.ban-title{ padding-left:10px; font-size: 13px;font-weight: bold;}
+
+.scroll-fixed{
+	position:fixed;
+	right:27px;
+	top:44px;
+}
+
+
+#index-dir{
+	min-height:385px;
+}
+#reflash{
+	margin-left:6px;
+}
+
+.margin-left-10{
+	margin-left:10px;
+}
+.fix-footer{
+	position:fixed;
+	bottom:0px;
+}
+
+.padd-right-10{
+	padding-right:10px;
+}
+.margin-minus-5{
+	margin-left:-5px;
+	margin-right:-10px;
+}
+
+
+/*新增采集源,上传excel,文件名字过长会造成页面样式混乱，特此设定固定宽度，超出显示省略...*/
+.explorer-caption{
+	width:216px;
+	overflow:hidden;
+	white-space : nowrap ;
+	text-overflow:ellipsis ;
+}
+
+/*用户登录初始化密码*/
+.pass-title{
+	margin: 10px 0px 10px 0px;
+	font-size: 24px; 
+	color: #2372a0;
+}
+.pass-row{
+	margin-top: 100px;
+}
+
+.pwd-bg{
+	background-color : #f7f7fe; 
+	min-height : 198px;
+}
+.pwd-tips{
+	margin : 10px;
+}
+.pwd-tips p{
+	height:22px;
+	line-height:22px;
+}
+.pwd-tips p:first-child{
+	margin-left:-15px;
+	font-weight:bold;
+	color:#F53F2A;
+}
+#tip{
+	font-size:15px;
+}

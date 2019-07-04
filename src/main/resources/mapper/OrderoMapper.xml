@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.csi.dao.OrderoMapper" >
+  <resultMap id="BaseResultMap" type="com.csi.model.Ordero" >
+    <id column="oid" property="oid" jdbcType="INTEGER" />
+    <result column="userId" property="userid" jdbcType="INTEGER" />
+    <result column="orderTime" property="ordertime" jdbcType="TIMESTAMP" />
+    <result column="orderState" property="orderstate" jdbcType="INTEGER" />
+    <result column="orderPrice" property="orderprice" jdbcType="DOUBLE" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    oid, userId, orderTime, orderState, orderPrice
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.csi.model.OrderoExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from ordero
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByIdAndState" resultMap="BaseResultMap" parameterType="com.csi.model.Ordero">
+  	select * from ordero where oid=#{oid} and orderState=#{orderstate}
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from ordero
+    where oid = #{oid,jdbcType=INTEGER}
+  </select>
+  <select id="selectall" resultMap="BaseResultMap">
+	select * from ordero
+  </select>
+  <select id="selectallbyuserid" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select * from ordero where userId=#{userid}
+  </select>
+  <select id="selectuserid" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+  	select userId from ordero where oid=#{oid}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from ordero
+    where oid = #{oid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.csi.model.OrderoExample" >
+    delete from ordero
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.csi.model.Ordero" >
+    insert into ordero (oid, userId, orderTime, 
+      orderState, orderPrice)
+    values (#{oid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{ordertime,jdbcType=TIMESTAMP}, 
+      #{orderstate,jdbcType=INTEGER}, #{orderprice,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertselectid" parameterType="com.csi.model.Ordero" useGeneratedKeys="true" keyProperty="oid">
+    insert into ordero (oid, userId, orderTime, 
+      orderState, orderPrice)
+    values (#{oid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{ordertime,jdbcType=TIMESTAMP}, 
+      #{orderstate,jdbcType=INTEGER}, #{orderprice,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.csi.model.Ordero" >
+    insert into ordero
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="oid != null" >
+        oid,
+      </if>
+      <if test="userid != null" >
+        userId,
+      </if>
+      <if test="ordertime != null" >
+        orderTime,
+      </if>
+      <if test="orderstate != null" >
+        orderState,
+      </if>
+      <if test="orderprice != null" >
+        orderPrice,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="oid != null" >
+        #{oid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="ordertime != null" >
+        #{ordertime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderstate != null" >
+        #{orderstate,jdbcType=INTEGER},
+      </if>
+      <if test="orderprice != null" >
+        #{orderprice,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.csi.model.OrderoExample" resultType="java.lang.Integer" >
+    select count(*) from ordero
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update ordero
+    <set >
+      <if test="record.oid != null" >
+        oid = #{record.oid,jdbcType=INTEGER},
+      </if>
+      <if test="record.userid != null" >
+        userId = #{record.userid,jdbcType=INTEGER},
+      </if>
+      <if test="record.ordertime != null" >
+        orderTime = #{record.ordertime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.orderstate != null" >
+        orderState = #{record.orderstate,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderprice != null" >
+        orderPrice = #{record.orderprice,jdbcType=DOUBLE},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update ordero
+    set oid = #{record.oid,jdbcType=INTEGER},
+      userId = #{record.userid,jdbcType=INTEGER},
+      orderTime = #{record.ordertime,jdbcType=TIMESTAMP},
+      orderState = #{record.orderstate,jdbcType=INTEGER},
+      orderPrice = #{record.orderprice,jdbcType=DOUBLE}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.csi.model.Ordero" >
+    update ordero
+    <set >
+      <if test="userid != null" >
+        userId = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="ordertime != null" >
+        orderTime = #{ordertime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderstate != null" >
+        orderState = #{orderstate,jdbcType=INTEGER},
+      </if>
+      <if test="orderprice != null" >
+        orderPrice = #{orderprice,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where oid = #{oid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.csi.model.Ordero" >
+    update ordero
+    set userId = #{userid,jdbcType=INTEGER},
+      orderTime = #{ordertime,jdbcType=TIMESTAMP},
+      orderState = #{orderstate,jdbcType=INTEGER},
+      orderPrice = #{orderprice,jdbcType=DOUBLE}
+    where oid = #{oid,jdbcType=INTEGER}
+  </update>
+</mapper>
